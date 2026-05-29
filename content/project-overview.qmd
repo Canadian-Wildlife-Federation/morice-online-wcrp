@@ -20,5 +20,7 @@ This WCRP focuses on habitat connectivity for Pacific salmon and steelhead in th
 
 Connectivity models in this WCRP focus on longitudinal habitat fragmentation by anthropogenic structures, including all types of dams and stream crossings. Diffuse natural barriers that make entire areas impassible are not included in the models but may be used to define the scope of this WCRP. For example, a tributary that is inhospitable because of increased water temperature may be excluded from the overall spatial scope of the WCRP because restoration needs there are broader than connectivity. 
 
-Figure 4: Map of the geographic scope of this connectivity restoration plan for Pacific salmon and steelhead in the Morice River in British Columbia.  
+
+![Figure 4: Map of the geographic scope of this connectivity restoration plan for Pacific salmon and steelhead in the Morice River in British Columbia.](images/Figure_4_morr_scope_map.png)
+
 

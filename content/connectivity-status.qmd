@@ -1,57 +1,46 @@
 
+---
+engine: knitr
+---
+
 
 # Connectivity Status Results {-}
 
 ## Current Connectivity Status {-}
 
-In the Morice River watershed, X km of Pacific salmon and steelhead spawning habitat are currently connected to the ocean and X km are disconnected from it. This means that X% of the X km of total spawning habitat is connected. 
+In the Morice River watershed, 878.78 km of Pacific salmon and steelhead spawning habitat are currently connected to the ocean and 53.25 km are disconnected from it. This means that 94.3% of the 932.03 km of total spawning habitat is connected. 
 
-In the Morice River watershed, X km of Pacific salmon and steelhead rearing habitat are currently connected to the ocean and X km are disconnected from it. This means that X% of the X km of total rearing habitat is connected. 
+In the Morice River watershed, 1924.33 km of Pacific salmon and steelhead rearing habitat are currently connected to the ocean and 167.07 km are disconnected from it. This means that 92.0% of the 2091.40 km of total rearing habitat is connected. 
 
 
 ## Structure Count {-}
 
-In the Morice River watershed, X structures potentially disconnect spawning habitat, and X structures potentially disconnect rearing habitat for Pacific salmon and steelhead. Of these, X are identified as barriers in need of rehabilitation (priority barriers), and X require further field assessment. 
+In the Morice River watershed, 73 structures potentially disconnect spawning habitat, and 139 structures potentially disconnect rearing habitat for Pacific salmon and steelhead. Of these, 3 are identified as barriers in need of rehabilitation (priority barriers), and 136 require further field assessment. 
 
 
 ## Maps {-}
+![Figure 5: Map of Pacific salmon and steelhead spawning habitat and structures that are confirmed or potential barriers to fish passage in the Morice River as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for spawning. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures)](images/Figure_1_Figure 5_spawning map.png)
 
-Figure 5: Map of Pacific salmon and steelhead spawning habitat and structures that are confirmed or potential barriers to fish passage in the Morice River as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for spawning. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures).  
 
-Figure 6: Map of Pacific salmon and steelhead rearing habitat and structures that are confirmed or potential barriers to fish passage in the Morice River as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures).  
+![Figure 6: Map of Pacific salmon and steelhead rearing habitat and structures that are confirmed or potential barriers to fish passage in the Morice River as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures)](images/Figure_2_Figure 6_rearing map.png)
 
 
 ## Habitat Accumulation Curves
 
-Figure 7: Habitat Accumulation Curve (HAC) showing structures in the Morice River as of May 2026. Structures are ranked based on how much (km) habitat for spawning and rearing habitat is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown (where applicable) to demonstrate the connectivity gains achieved through implementation of this plan.  
+![Figure 7: Habitat Accumulation Curve (HAC) showing structures in the Morice River as of May 2026. Structures are ranked based on how much (km) habitat for spawning and rearing habitat is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown (where applicable) to demonstrate the connectivity gains achieved through implementation of this plan.](images/Fig_3_Fig 7_MORR_HAC.png)
 
 
 ## Habitat Accumulation Summary Table
-Table 1: Labelled structures in the Habitat Accumulation Curve (Figure 3 and Figure 7), their rank, and upstream habitat for Pacific salmon and steelhead in Morice River watershed. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored.  
 
-```{r hac1, echo = FALSE, results = 'asis'}
+```{r}
 #| label: table-1
-#| tbl-cap: "Table 1. Labelled structures in the Habitat Accumulation Curve (Figure 3), their rank, and weighted upstream habitat for Atlantic Salmon in the Stewiacke watershed. Weighted Habitat Gain per Set represents the amount (km) of weighted habitat upstream of that structure to the next structure and depicts the immediate potential gain in habitat if passage at that structure was restored. Total Weighted Habitat Upstream per Set (km) represents the total amount (km) of weighted habitat upstream of the set, regardless of upstream structures, and depicts the long-term potential gain in habitat if passage at that structure (and all other upstream structures) was restored. Structure rank represents the model ranking of all sets of 1 or more structures."
+#| tbl-cap: "Table 1: Labelled structures in the Habitat Accumulation Curve (Figure 3 and Figure 7), their rank, and upstream habitat for Pacific salmon and steelhead in Morice River watershed. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored."
 #| warning: false
 #| echo: false
 source("Rscripts/table_formatting.R")
 library("flextable")
 
-data <- read.csv("data/table1.csv", check.names=FALSE)
-ft <- flextable(data)
-ft <- format_flextable(ft)
-ft
-```
-
-```{r hac2, echo = FALSE, results = 'asis'}
-#| label: table-2
-#| tbl-cap: "Table 2. Labelled structures in the Habitat Accumulation Curve (Figure 4), their rank, and weighted upstream habitat for American Eel in the Stewiacke watershed. Weighted Habitat Gain per Set represents the amount (km) of weighted habitat upstream of that structure to the next structure and depicts the immediate potential gain in habitat if passage at that structure was restored. Total Weighted Habitat Upstream per Set (km) represents the total amount (km) of weighted habitat upstream of the set, regardless of upstream structures, and depicts the long-term potential gain in habitat if passage at that structure (and all other upstream structures) was restored. Structure rank represents the model ranking of all sets of 1 or more structures."
-#| warning: false
-#| echo: false
-source("Rscripts/table_formatting.R")
-library("flextable")
-
-data <- read.csv("data/table2.csv", check.names=FALSE)
+data <- read.csv("data/Table1_HAS.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft

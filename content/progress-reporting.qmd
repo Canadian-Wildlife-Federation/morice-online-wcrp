@@ -1,17 +1,46 @@
+---
+engine: knitr
+---
+
 # Progress Reporting {-}
 
 ## Progress Summary {-}
 
-This WCRP was initiated in 2025, but concerted efforts towards connectivity assessments and planning have been ongoing in the watershed by key groups, including the Society for Ecological Restoration in Northern BC, office of the Wet’suwet’en, BC Fish Passage Technical Working Group, and Fisheries and Oceans Canada, among others, since 2020. Since then, the passability of X structures has been assessed, and further habitat assessments were completed at X of these. Several priority barriers have been identified through these processes, and plans to begin restoring connectivity are underway, with a particular focus on the Owen Creek (Bii Wenii Kwa) subwatershed.  
+This WCRP was initiated in 2025, but concerted efforts towards connectivity assessments and planning have been ongoing in the watershed by key groups, including the Society for Ecological Restoration in Northern BC, office of the Wet'suwet'en, BC Fish Passage Technical Working Group, and Fisheries and Oceans Canada, among others, since 2020. Since then, the passability of 39 structures has been assessed, and further habitat assessments were completed at 5 of these. Several priority barriers have been identified through these processes, and plans to begin restoring connectivity are underway, with a particular focus on the Owen Creek (Bii Wenii Kwa) subwatershed.
 
 
 ## Annual Progress Report {-}
 
-Since April 2025, the following actions were completed: 
+Since April 2025, the following actions were completed:
 
-- The connectivity models were created and updated based on previous barrier assessments, habitat confirmations, and management planning reports for the Morice River watershed, which were provided to CWF for creation of this first version of the WCRP. 
+- The connectivity models were created and updated based on previous barrier assessments, habitat confirmations, and management planning reports for the Morice River watershed, which were provided to CWF for creation of this first version of the WCRP.
 
 ## Priority Barriers {-}
-Table 2: Structures in the Morice River watershed that are confirmed as barriers to fish passage for Pacific salmon and steelhead with confirmed habitat upstream, as of May 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that is either confirmed to or potentially be blocking passage. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity.  
 
+```{r}
+#| label: table-10
+#| tbl-cap: 'Table 2: Structures in the Morice River watershed that are confirmed as barriers to fish passage for Pacific salmon and steelhead with confirmed habitat upstream, as of May 2026. Barriers known to be partially passable are indicated by "yes", with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that is either confirmed to or potentially be blocking passage. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity.'
+#| echo: false
+#| warning: false
+source("Rscripts/table_formatting.R")
+library("flextable")
 
+data <- read.csv("data/prio_MORR.csv", check.names=FALSE)
+
+ft <- flextable(data)
+ft <- set_header_labels(   
+  ft,
+    'barrier_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+    'watershed_group_code' = 'Watershed Name',
+    'structure_owner' = 'Structure Owner',
+    'structure_type' = 'Structure Type',
+    'partial_passability' = 'Partial Passability',
+    'partial_passability_notes' = 'Partial Passability Details',
+    'num_barriers_set' = 'Number of Structures in Set',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Habitat Gain (km)*',
+    'next_steps' = 'Next Step'
+  )
+ft <- format_flextable(ft)
+ft
+```

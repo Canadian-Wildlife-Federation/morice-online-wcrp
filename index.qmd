@@ -1,16 +1,62 @@
 
+---
+jupyter: python3
+---
+
 ## Executive Summary {-}
+
+```{python}
+#| echo: false
+#| output: false
+from content.python.api_calls_v2 import get_metric_value, get_structure_count_value
+
+spawning_connected_km = get_metric_value("MORR", "accessible_spawning_all")
+spawning_disconnected_km = get_metric_value("MORR", "disconnected_spawning_all")
+spawning_total_km = get_metric_value("MORR", "total_spawning_all")
+spawning_connected_pct = round((spawning_connected_km / spawning_total_km) * 100, 1)
+
+rearing_connected_km = get_metric_value("MORR", "accessible_rearing_all")
+rearing_disconnected_km = get_metric_value("MORR", "disconnected_rearing_all")
+rearing_total_km = get_metric_value("MORR", "total_rearing_all")
+rearing_connected_pct = round((rearing_connected_km / rearing_total_km) * 100, 1)
+
+potentially_disconnect_spawning_structures = get_structure_count_value(
+    "morr", "all_spawning", "structures_that_potentially_disconnect_habitat"
+)
+potentially_disconnect_rearing_structures = get_structure_count_value(
+    "morr", "all_rearing", "structures_that_potentially_disconnect_habitat"
+)
+priority_barriers = get_structure_count_value(
+    "morr", "all_spawningrearing", "priority_barriers"
+)
+further_field_assessment = get_structure_count_value(
+    "morr", "all_spawningrearing", "require_further_assessment"
+)
+```
 
 The purpose of the Morice River Watershed Connectivity Restoration Plan (WCRP) is to improve understanding of habitat connectivity for Sockeye Salmon (Onchorhynchus nerka), Chinook Salmon (O. tschawytscha), Coho Salmon (O. kisutch) and steelhead (O. mykiss) (herein referred to as ‘Pacific salmon and steelhead’) in the Morice River and inform efforts to close knowledge gaps and plan and prioritize restoration. Local data and knowledge are combined with connectivity modelling to estimate current connectivity status and identify structures that potentially block the most habitat. This informs the prioritization of field assessments to close the most significant knowledge gaps efficiently. Information from field assessments of barrier status and habitat condition are incorporated into the model, improving understanding of which barriers block the most habitat, and informing restoration prioritization. As knowledge gaps are closed and barriers are addressed, this plan will be revised to summarize progress and provide updated estimates of connectivity status and the status and relative importance of remaining structures. 
 
-In the Morice River watershed, X km of Pacific salmon and steelhead spawning habitat are currently connected to the ocean and X km are disconnected from it. This means that X% of the X km of total spawning habitat is connected. X km of Pacific salmon and steelhead rearing habitat are currently connected to the ocean and X km are disconnected from it. This means that X% of the X km of total rearing habitat is connected. 
+In the Morice River watershed, `{python} spawning_connected_km` km of Pacific salmon and steelhead spawning habitat are currently connected to the ocean and `{python} spawning_disconnected_km` km are disconnected from it. This means that `{python} spawning_connected_pct`% of the `{python} spawning_total_km` km of total spawning habitat is connected. `{python} rearing_connected_km` km of Pacific salmon and steelhead rearing habitat are currently connected to the ocean and `{python} rearing_disconnected_km` km are disconnected from it. This means that `{python} rearing_connected_pct`% of the `{python} rearing_total_km` km of total rearing habitat is connected. 
 
-In the Morice River watershed, X structures potentially disconnect spawning habitat, and X structures potentially disconnect rearing habitat for Pacific salmon and steelhead. Of these, X are identified as barriers in need of rehabilitation (priority barriers), and X require further field assessment. 
+In the Morice River watershed, `{python} potentially_disconnect_spawning_structures` structures potentially disconnect spawning habitat, and `{python} potentially_disconnect_rearing_structures` structures potentially disconnect rearing habitat for Pacific salmon and steelhead. Of these, `{python} priority_barriers` are identified as barriers in need of rehabilitation (priority barriers), and `{python} further_field_assessment` require further field assessment. 
 
-Figure 1: Map of Pacific salmon and steelhead spawning habitat and structures that are confirmed or potential barriers to fish passage in the Morice River watershed as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for spawning. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures).  
 
-Figure 2: Map of Pacific salmon and steelhead rearing habitat and structures that are confirmed or potential barriers to fish passage in the Morice River watershed as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures).  
+::: {#fig-map1}
+![](content/images/Figure_1_Figure 5_spawning map.png)
 
-Figure 3: Habitat Accumulation Curve (HAC) showing structures in the Morice River as of May 2026. Structures are ranked based on how much (km) habitat for spawning and rearing habitat is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown (where applicable) to demonstrate the connectivity gains achieved through implementation of this plan.  
+ Map of Pacific salmon and steelhead spawning habitat and structures that are confirmed or potential barriers to fish passage in the Morice River watershed as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for spawning. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures).  
+:::
+
+::: {#fig-map2}
+![](content/images/Figure_2_Figure 6_rearing map.png)
+
+ Map of Pacific salmon and steelhead rearing habitat and structures that are confirmed or potential barriers to fish passage in the Morice River watershed as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more of Pacific salmon and steelhead could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more Pacific salmon and steelhead for rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures).  
+:::
+
+::: {#fig-hac}
+![](content/images/Fig_3_Fig 7_MORR_HAC.png)
+
+ Habitat Accumulation Curve (HAC) showing structures in the Morice River as of May 2026. Structures are ranked based on how much (km) habitat for spawning and rearing habitat is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown (where applicable) to demonstrate the connectivity gains achieved through implementation of this plan.  
+:::
 
 This WCRP was initiated in 2025, but concerted efforts towards connectivity assessments and planning have been ongoing in the watershed by key groups, including the Society for Ecological Restoration in Northern BC, office of the Wet’suwet’en, BC Fish Passage Technical Working Group, and Fisheries and Oceans Canada, among others, since 2020. Since then, the passability of X structures has been assessed, and further habitat assessments were completed at X of these. Several priority barriers have been identified through these processes, and plans to begin restoring connectivity are underway, with a particular focus on the Owen Creek (Bii Wenii Kwa) subwatershed.  
