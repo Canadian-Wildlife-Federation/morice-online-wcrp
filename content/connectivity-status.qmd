@@ -41,6 +41,12 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/Table1_HAS.csv", check.names=FALSE)
+habitat_gain_columns <- grep("Habitat Gain", names(data))
+data[habitat_gain_columns] <- lapply(
+  data[habitat_gain_columns],
+  round,
+  digits = 2
+)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft

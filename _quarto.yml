@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "Morice Watershed Connectivity Restoration Plan (WCRP)"
+  title: "Morice River Watershed Connectivity Restoration Plan"
   author: "Canadian Wildlife Federation"
   date: last-modified
   date-format: "DD-MM-YYYY"
