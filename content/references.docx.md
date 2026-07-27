@@ -8,7 +8,7 @@ B. Rebellato, Office of the Wet’suwet’en, N. Mazany-Wright, F. Montgomery, a
 
 ## Acknowledgements {-}
 
-CWF recognizes that the lands and waters that form the basis of this plan are the traditional unceded territory of the Wet’suwet’en peoples. Plan development and implementation was funded by the BC Salmon Restoration and Innovation Fund. Members of the Planning Team [(Appendix B)](appendix-b.qmd) are passionate about the conservation and restoration of freshwater ecosystems and the species they support, and contributed feedback, guidance, and knowledge. Accessibility models were inspired by fish-passage prioritization approaches developed by British Columbia’s Fish Passage Technical Working Group.  
+CWF recognizes that the lands and waters that form the basis of this plan are the traditional unceded territory of the Wet’suwet’en peoples. Plan development and implementation was funded by the BC Salmon Restoration and Innovation Fund. Members of the Planning Team [(Appendix B)](content/appendix-b.qmd) are passionate about the conservation and restoration of freshwater ecosystems and the species they support, and contributed feedback, guidance, and knowledge. Accessibility models were inspired by fish-passage prioritization approaches developed by British Columbia’s Fish Passage Technical Working Group.  
 
 ## References {-}
 
